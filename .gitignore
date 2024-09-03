@@ -1,0 +1,7 @@
+airflow/logs/
+airflow/plugins/
+docker_pg_pgadmin/data_pgadmin/
+ny_taxi_postgres_data/
+terraform/.terraform/
+*.log
+*.pyc
