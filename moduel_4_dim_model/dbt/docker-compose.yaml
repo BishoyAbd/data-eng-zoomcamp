@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  dbt:
+    build: .
+    container_name: dbt_container
+    volumes:
+      - .:/usr/app   # should be like this you shold map the dir dbt dir to /usr/app
+    networks:
+      - dbt_network
+    environment:
+      - DBT_PROFILES_DIR=/usr/app/.dbt
+
+      
+      # Keeps the container running (best practices not adding to Dockerfile) 
+      #Typically, dbt doesn't need to be always running unless you're using it interactively or executing commands in an automated way (e.g., through Airflow).
+    command: tail -f /dev/null  
+
+networks:
+  dbt_network:
+    driver: bridge

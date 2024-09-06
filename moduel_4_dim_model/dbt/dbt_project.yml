@@ -1,0 +1,15 @@
+name: 'my_dbt_project'  # Project name
+version: '1.0'  # Project version
+config-version: 2  # dbt config version
+
+# Add this line to specify the profile from profiles.yml
+profile: my_dbt_project  # This must match the profile name in profiles.yml
+
+# Directory where models are stored
+model-paths: ["models"]
+
+# Default settings for models
+models:
+  my_dbt_project:  # This matches the project name
+    # +schema: public  # Schema in PostgreSQL if you didnot comment it you will get public_public
+    +materialized: view  # Default materialization (view, table, or incremental)

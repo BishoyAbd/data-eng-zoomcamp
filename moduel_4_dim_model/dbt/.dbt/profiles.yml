@@ -1,0 +1,11 @@
+my_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.docker.internal #your_postgres_container_name
+      user: root # for postgress when making the container
+      password: root #for postgress when making the container
+      port: 5432
+      dbname: ny_taxi #your_database_name
+      schema: public
